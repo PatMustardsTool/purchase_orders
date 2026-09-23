@@ -1,0 +1,6 @@
+schema:
+  - https://api.monday.com/v2:
+      headers:
+        Authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYxNzQ1OTczMCwiYWFpIjoxMSwidWlkIjo5OTIwNzM0NSwiaWFkIjoiMjAyNi0wMi0wNVQxMjo1NDo0NS4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjQ2OTI1MTksInJnbiI6ImV1YzEifQ.flotSYfrZz9HqtugRDmoQILaQ-nvzMaAsnW1mNCEh70'
+documents:
+  - 'src/**/*.graphql'
