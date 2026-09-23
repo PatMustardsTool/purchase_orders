@@ -25,8 +25,12 @@ export const ProviderPageForm = (props: Props) => {
     return (
         <ContextPageForm.Provider
             value={{
-                setReset: (fn_reset: type_cb_fn) => {ref_fn_reset.current = fn_reset},
-                Reset: () => {ref_fn_reset.current()}
+                setReset: (fn_reset: type_cb_fn) => {
+                    ref_fn_reset.current = fn_reset
+                },
+                Reset: () => {
+                    ref_fn_reset.current()
+                }
             }}
         >
             {props.children}
