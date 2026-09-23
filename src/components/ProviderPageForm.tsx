@@ -11,16 +11,16 @@ type Props = {
     children: ReactNode
 }
 
-const my_fn = () => {}
+const my_null_fn = () => {}
 
 const ContextPageForm = createContext<type_context_form>({
-    setReset: my_fn,
-    Reset: my_fn
+    setReset: my_null_fn,
+    Reset: my_null_fn
 })
 
 export const ProviderPageForm = (props: Props) => {
 
-    const ref_fn_reset = useRef<type_cb_fn>(my_fn)
+    const ref_fn_reset = useRef<type_cb_fn>(my_null_fn)
 
     return (
         <ContextPageForm.Provider
