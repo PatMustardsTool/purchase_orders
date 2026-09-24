@@ -2,7 +2,7 @@ import my_background from '@/assets/background.svg'
 
 export const env_background_image_url = `url("${my_background}")`
 
-export const env_timestamp = '24/09/26 11:41'
+export const env_timestamp = '24/09/26 11:44'
 
 export const env_stale_time = 3600000
 
