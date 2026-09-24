@@ -1,0 +1,1 @@
+import{t as e}from"./index-DbDTaeq8.js";var t=e(),n=()=>(0,t.jsx)(`div`,{children:`Search`});export{n as Search};
