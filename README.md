@@ -205,9 +205,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        uses: actions/checkout@v5
       - name: Set up Node
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        uses: actions/setup-node@v5
         with:
           node-version: lts/*
           cache: 'npm'
@@ -216,14 +216,14 @@ jobs:
       - name: Build
         run: npm run build -- --base=/${{ github.event.repository.name }}/
       - name: Setup Pages
-        uses: actions/configure-pages@45bfe0192ca1faeeb007ade9deae92b16b8254a0d
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        uses: actions/upload-pages-artifact@v4
         with:
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+        uses: actions/deploy-pages@v4
 ```
 ### 2. After committing:
 
