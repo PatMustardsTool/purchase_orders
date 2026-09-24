@@ -168,11 +168,18 @@
   npm run build
   npm install -g @mondaycom/apps-cli
   mapps init -t eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYxNzQ1OTczMCwiYWFpIjoxMSwidWlkIjo5OTIwNzM0NSwiaWFkIjoiMjAyNi0wMi0wNVQxMjo1NDo0NS4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjQ2OTI1MTksInJnbiI6ImV1YzEifQ.flotSYfrZz9HqtugRDmoQILaQ-nvzMaAsnW1mNCEh70
-  cd "C:\Users\OliverAherne\WebstormProjects\temp_17_07_26\dist"; mapps code:push --client-side -i 15082407
+  cd "C:\Users\OliverAherne\WebstormProjects\purchase_orders\dist"; mapps code:push --client-side -i 18234409
 ```
 
 ### 3. Add To Board:
-####  - Build → Features → Deployment
+####  - Build → Features
+
+- **Basic Settings:** Change the name
+- **Deployment:**
+  - Client-side code
+  - Use app url in sub route (e.g. https://v2ef9ecd0cfbf9ad8c13dc51aae3ad5e9.cdn2.monday.app) 
+- 
+
 ####  - Clear Deployment box and save changes
 
 ## Links:
