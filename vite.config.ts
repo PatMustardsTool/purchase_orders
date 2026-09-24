@@ -9,6 +9,5 @@ export default defineConfig({
     alias: {
       '@': root
     }
-  },
-  base: '/purchase_orders/'
+  }
 })
