@@ -1,8 +1,8 @@
 import {List, ListItem, ListItemText} from '@mui/material'
-import {route_definitions} from '@/config/route_definitions'
 import {UiDrawer} from '@/ui/UiDrawer'
 import {UiListItemButton} from '@/ui/UiListItemButton'
 import {UiTypographyTimestamp} from '@/ui/UiTypographyTimestamp'
+import {route_definitions} from '@/config/route_definitions'
 
 type type_cb_fn = () => void
 
