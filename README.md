@@ -177,10 +177,7 @@
 - **Basic Settings:** Change the name
 - **Deployment:**
   - Client-side code
-  - Use app url in sub route (e.g. https://v2ef9ecd0cfbf9ad8c13dc51aae3ad5e9.cdn2.monday.app) 
-- 
-
-####  - Clear Deployment box and save changes
+  - Use app url in sub route (e.g. https://v2ef9ecd0cfbf9ad8c13dc51aae3ad5e9.cdn2.monday.app)
 
 ## Links:
 - [Material UI](https://mui.com/components/)
