@@ -32,30 +32,18 @@ export const env_client = {
 
 export const env_board_purchase_order = {
     board_id: '5099620471',
-    create_columns: {
-        OrderedBy: 'text_mm55ew6x',
-        Contract: 'text_mm4wtk58',
-        JobType: 'text_mm55zb69',
-        JobReference: 'text_mm4whtmf',
-        Supplier: 'text_mm53pza3',
-        Eque2Date: 'date4'
-    },
-    get_item_columns: {
+    columns:
+    {
         FormattedId: 'pulse_id_mm4xbj0m',
         OrderedBy: 'text_mm55ew6x',
         Contract: 'text_mm4wtk58',
         JobType: 'text_mm55zb69',
         JobReference: 'text_mm4whtmf',
         Supplier: 'text_mm53pza3',
-        Eque2Date: 'date4'
-    },
-    get_items_columns: {
-        OrderedBy: 'text_mm55ew6x',
-        Contract: 'text_mm4wtk58',
-        JobType: 'text_mm55zb69',
-        JobReference: 'text_mm4whtmf',
-        Supplier: 'text_mm53pza3',
-        Total: 'lookup_mm5rp7j7'
+        Eque2Date: 'date4',
+        Status: 'color_mm7g8zdw',
+        Total: 'lookup_mm5rp7j7',
+        Lines: 'formula_mm7gfc88',
     },
     sub_item_columns: {
         Code: 'text_mm5nd711',
