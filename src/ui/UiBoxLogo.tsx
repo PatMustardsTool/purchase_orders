@@ -2,9 +2,11 @@ import {Box, type BoxProps} from '@mui/material'
 import {theme} from '@/config/theme'
 import my_logo from '@/assets/logo.jpg'
 
-const {minHeight, ...theme_height_breakpoints} = theme.mixins.toolbar
+type type_box_image = BoxProps<'img'>
 
-const base_image_box: BoxProps<'img'> = {
+const {minHeight, ...my_theme_height_breakpoints} = theme.mixins.toolbar
+
+const base_image_box: type_box_image = {
     component: 'img',
     src: my_logo,
     sx: {
@@ -12,7 +14,7 @@ const base_image_box: BoxProps<'img'> = {
         maxHeight: minHeight,
         maxWidth: '100%',
         minHeight: minHeight,
-        ...theme_height_breakpoints
+        ...my_theme_height_breakpoints
     }
 }
 

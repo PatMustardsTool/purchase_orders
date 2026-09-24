@@ -1,5 +1,5 @@
-import {AppBar, type AppBarProps} from '@mui/material'
 import {type ReactNode} from 'react'
+import {AppBar, type AppBarProps} from '@mui/material'
 
 type Props = {
     children: ReactNode

@@ -9,10 +9,12 @@ type Props = {
 
 const base_box_form: type_box_form = {
     autoComplete: 'off',
+    component: 'form',
     sx: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%'
+        height: '100%',
+        minHeight: 0
     }
 }
 

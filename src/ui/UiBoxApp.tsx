@@ -1,5 +1,5 @@
-import {Box, type BoxProps} from '@mui/material'
 import {type ReactNode} from 'react'
+import {Box, type BoxProps} from '@mui/material'
 
 type Props = {
     children: ReactNode
@@ -10,6 +10,7 @@ const base_box: BoxProps = {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
+        minHeight: 0,
         overflow: 'hidden'
     }
 }

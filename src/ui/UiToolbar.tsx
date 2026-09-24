@@ -1,8 +1,8 @@
-import {Toolbar, type ToolbarProps} from '@mui/material'
 import {type ReactNode} from 'react'
+import {Toolbar, type ToolbarProps} from '@mui/material'
 
 type Props = {
-    children: ReactNode;
+    children: ReactNode
 }
 
 const base_toolbar: ToolbarProps = {

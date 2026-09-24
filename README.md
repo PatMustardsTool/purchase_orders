@@ -27,6 +27,7 @@
     - `src/schema`
     - `src/ui`
     - `src/utils`
+    - `src/api`
 - Create files:
     - `src/config/env.ts`
     - `src/config/route_definitions.ts`

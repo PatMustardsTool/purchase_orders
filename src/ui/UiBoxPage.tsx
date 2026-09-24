@@ -10,6 +10,7 @@ const base_box: BoxProps = {
     sx: {
         background: `${env_background_image_url} center / cover`,
         flex: 1,
+        minHeight: 0,
         overflow: 'hidden'
     }
 }
