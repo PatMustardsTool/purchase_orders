@@ -2,6 +2,8 @@ import {useEffect} from 'react'
 import {useForm} from 'react-hook-form'
 import {useNavigate} from 'react-router-dom'
 import {zodResolver} from '@hookform/resolvers/zod'
+import {UiBoxForm} from '@/ui/UiBoxForm'
+import {UiGrid} from '@/ui/UiGrid'
 import {useDataCreate} from '@/hooks/useDataCreate'
 import {useAnimation} from '@/hooks/useAnimation'
 import {useBoolean} from '@/hooks/useBoolean'
@@ -17,9 +19,9 @@ export const Create = () => {
     const hook_navigate = useNavigate()
     const hook_page_form = usePageForm()
     const hook_data = useDataCreate()
-    const hook_popup = useBoolean()
     const hook_button_icon_copy = useAnimation()
     const hook_button_submit = useAnimation()
+    const hook_popup = useBoolean()
     // const hook_popup_item = usePopupItem()
 
     const {control, formState, handleSubmit, reset} = useForm<SchemaCreate>({
@@ -29,9 +31,15 @@ export const Create = () => {
         defaultValues: schema_default
     })
 
-    useEffect(() => hook_page_form.setReset(reset), [reset])
+    useEffect(() => {hook_page_form.setReset(reset)}, [reset])
 
     return (
-        <div>Create</div>
+        <>
+            <UiBoxForm>
+                <UiGrid flex={{xs: '1', sm: 'none'}}>
+
+                </UiGrid>
+            </UiBoxForm>
+        </>
     )
 }
