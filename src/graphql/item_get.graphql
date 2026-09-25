@@ -1,0 +1,11 @@
+query ($var_item_id: ID!, $var_column_ids: [String!]!)
+{
+    items(ids: [$var_item_id]) {
+        id
+        name
+        column_values(ids: $var_column_ids) {
+            id
+            text
+        }
+    }
+}

@@ -6,6 +6,8 @@ export const env_timestamp = '24/09/26 13:54'
 
 export const env_stale_time = 3600000
 
+export const env_item_limit = 500
+
 export const env_theme = {
     primary: '#B8860B',
     primary_lighter: '#BF921F',
