@@ -1,6 +1,6 @@
 import {client} from '@/api/client'
 import {env_item_limit} from '@/config/env'
-import query_get_items from '@/graphql/items_get.graphql?raw'
+import query_data_get from '@/graphql/data_get.graphql?raw'
 
 type type_record = Record<string, string>
 
@@ -44,7 +44,7 @@ export const fn_data_get = async (params: Params): Promise<Return> => {
     const my_column_names = Object.fromEntries(my_column_entries)
 
     const my_response = await client.post<type_items>('', {
-        query: query_get_items,
+        query: query_data_get,
         variables: {
             var_board_ids: [params.board_id],
             var_column_ids: my_column_ids,
