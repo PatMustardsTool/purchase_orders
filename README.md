@@ -20,14 +20,15 @@
 - Delete other files in public and assets
 - Delete `App.css`
 - Create folders:
+    - `src/api`
     - `src/components`
     - `src/config`
+    - `src/forms`
     - `src/hooks`
     - `src/pages`
     - `src/schema`
     - `src/ui`
     - `src/utils`
-    - `src/api`
 - Create files:
     - `src/config/env.ts`
     - `src/config/route_definitions.ts`
