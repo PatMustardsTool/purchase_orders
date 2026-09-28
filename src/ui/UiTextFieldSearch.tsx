@@ -1,10 +1,11 @@
-import {type ChangeEvent} from 'react'
 import {TextField, type TextFieldProps} from '@mui/material'
 import {env_theme} from '@/config/env'
 
+type type_on_change = TextFieldProps['onChange']
+
 type Props = {
     value: string
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void
+    onChange: type_on_change
 }
 
 const base_text_field: TextFieldProps = {
