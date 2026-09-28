@@ -1,35 +1,29 @@
-import {type ReactNode, type RefObject} from 'react'
+import {type ReactNode, type Ref} from 'react'
 import {Grid, type GridProps} from '@mui/material'
 import {type ResponsiveStyleValue} from '@mui/system'
 import {env_theme} from '@/config/env'
 
+type type_flex = ResponsiveStyleValue<string>
+type type_ref = Ref<HTMLDivElement>
+
 type Props = {
     children: ReactNode
-    flex: ResponsiveStyleValue<string | number>
-    ref?: RefObject<HTMLDivElement | null>
+    flex: type_flex
+    ref?: type_ref
 }
 
 const base_grid: GridProps = {
     container: true,
-    spacing: {
-        xs: 1.25,
-        md: 2
-    },
+    spacing: {xs: 1.25, md: 2},
     sx: {
         // border: '1px solid red',
-        minHeight: 0,
         margin: 0,
-        width: '100%',
+        minHeight: 0,
         overflowY: 'auto',
-        padding: {
-            xs: 1.25,
-            md: 2
-        },
+        padding: {xs: 1.25, md: 2},
+        width: '100%',
         '&::-webkit-scrollbar': {
-            width: {
-                xs: 3,
-                md: 6
-            }
+            width: {xs: 3, md: 6}
         },
         '&::-webkit-scrollbar-thumb': {
             backgroundColor: env_theme.primary_transparent,
