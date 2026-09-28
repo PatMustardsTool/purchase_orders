@@ -34,14 +34,14 @@ export const useDataCreate = () => {
 
             return {
                 tables: {
-                    job_type: job_type.table,
-                    ordered_by: ordered_by.table
+                    job_type: job_type.my_table,
+                    ordered_by: ordered_by.my_table
                 },
                 options: {
-                    contract: contract.options,
-                    supplier: supplier.options,
-                    job_type: job_type.options,
-                    ordered_by: ordered_by.options
+                    contract: contract.my_options,
+                    supplier: supplier.my_options,
+                    job_type: job_type.my_options,
+                    ordered_by: ordered_by.my_options
                 }
             }
         },
@@ -49,7 +49,7 @@ export const useDataCreate = () => {
     })
 
     return {
-        tables: my_tanstack_query.data?.tables ?? my_empty_data.tables,
+        my_tables: my_tanstack_query.data?.tables ?? my_empty_data.tables,
         options: my_tanstack_query.data?.options ?? my_empty_data.options,
         loading: my_tanstack_query.isPending,
         error: my_tanstack_query.error

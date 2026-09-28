@@ -29,8 +29,8 @@ type Params = {
 }
 
 type Return = {
-    table: type_record[]
-    options: string[]
+    my_table: type_record[]
+    my_options: string[]
 }
 
 export const fn_data_get = async (params: Params): Promise<Return> => {
@@ -55,7 +55,7 @@ export const fn_data_get = async (params: Params): Promise<Return> => {
 
     const my_items = my_response.data.data.boards[0].items_page.items
 
-    const table = my_items.map<type_record>((my_item) => {
+    const my_table = my_items.map<type_record>((my_item) => {
 
         const my_entries = my_item.column_values.map((my_column) => {
 
@@ -73,16 +73,16 @@ export const fn_data_get = async (params: Params): Promise<Return> => {
         }
     })
 
-    table.sort((my_current_row, my_next_row) => {
+    my_table.sort((my_current_row, my_next_row) => {
         return my_current_row.name.localeCompare(my_next_row.name)
     })
 
-    const options = table.map((my_row) => {
+    const my_options = my_table.map((my_row) => {
         return my_row.name
     })
 
     return {
-        table,
-        options
+        my_table,
+        my_options
     }
 }
