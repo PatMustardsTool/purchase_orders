@@ -1,6 +1,6 @@
 import {List, ListItem, ListItemText} from '@mui/material'
 import {UiDrawer} from '@/ui/UiDrawer'
-import {UiListItemButton} from '@/ui/UiListItemButton'
+import {UiListItemButtonMenu} from '@/ui/UiListItemButtonMenu'
 import {UiTypographyTimestamp} from '@/ui/UiTypographyTimestamp'
 import {route_definitions} from '@/config/route_definitions'
 
@@ -49,9 +49,9 @@ export const ListMenu = (props: Props) => (
 
                 return (
                     <ListItem key={my_menu_item.path}>
-                        <UiListItemButton {...props_list_item_button}>
+                        <UiListItemButtonMenu {...props_list_item_button}>
                             <ListItemText {...props_list_item_text}/>
-                        </UiListItemButton>
+                        </UiListItemButtonMenu>
                     </ListItem>
                 )
             })}

@@ -27,7 +27,7 @@ const base_list_item_button: ListItemButtonProps = {
     }
 }
 
-export const UiListItemButton = (props: Props) => (
+export const UiListItemButtonMenu = (props: Props) => (
     <ListItemButton {...props.list_item_button} {...base_list_item_button}>
         {props.children}
     </ListItemButton>
