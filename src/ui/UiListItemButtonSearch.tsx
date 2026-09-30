@@ -7,7 +7,7 @@ type type_cb_fn = () => void
 type Props = {
     list_item_button: {
         onClick: type_cb_fn
-        status_selected: boolean
+        selected: boolean
     }
     children: ReactNode
 }
@@ -26,11 +26,11 @@ export const UiListItemButtonSearch = (props: Props) => {
 
     const props_list_item_button: ListItemButtonProps = {
         ...props.list_item_button,
-        autoFocus: props.list_item_button.status_selected,
+        autoFocus: props.list_item_button.selected,
         sx: {
             ...base_list_item_button.sx,
-            border: props.list_item_button.status_selected ? `0.1rem solid ${env_theme.primary}` : 'none',
-            color: props.list_item_button.status_selected ? env_theme.primary : env_theme.secondary
+            border: props.list_item_button.selected ? `0.1rem solid ${env_theme.primary}` : 'none',
+            color: props.list_item_button.selected ? env_theme.primary : env_theme.secondary
         }
     }
 

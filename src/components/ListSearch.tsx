@@ -22,7 +22,7 @@ export const ListSearch = (props: Props) => (
             const props_list_item_button = {
                 list_item_button: {
                     onClick: () => props.onSelect(my_option),
-                    status_selected: status_selected
+                    selected: status_selected
                 }
             }
 
