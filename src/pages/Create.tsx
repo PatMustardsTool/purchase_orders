@@ -7,6 +7,7 @@ import {UiGrid} from '@/ui/UiGrid'
 import {UiGridItem} from '@/ui/UiGridItem'
 import {UiDivider} from '@/ui/UiDivider'
 import {UiTextField} from '@/ui/UiTextField'
+import {UiDatePicker} from '@/ui/UiDatePicker'
 import {UiButtonSubmit} from '@/ui/UiButtonSubmit'
 import {Autocomplete} from '@/components/Autocomplete'
 import {useDataCreate} from '@/hooks/useDataCreate'
@@ -79,6 +80,12 @@ export const Create = () => {
                             controller={{control, name: 'Supplier'}}
                             autocomplete={{options: hook_data.options.supplier, disabled: formState.isSubmitting}}
                             text_field={{label: 'Supplier'}}
+                        />
+                    </UiGridItem>
+                    <UiGridItem size={{xs: 12, sm: 4}}>
+                        <UiDatePicker
+                            controller={{control, name: 'Eque2Date'}}
+                            date_picker={{label: 'Eque2 Date', disabled: formState.isSubmitting}}
                         />
                     </UiGridItem>
                 </UiGrid>
