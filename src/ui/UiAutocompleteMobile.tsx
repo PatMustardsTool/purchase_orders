@@ -40,20 +40,13 @@ export const UiAutocompleteMobile = <T extends FieldValues>(props: Props<T>) => 
     return (
         <>
             <UiButton
-                button={{
-                    onClick: hook_popup.Enable,
-                    disabled: props.autocomplete.disabled
-                }}
-                sx={{
-                    color: my_value === null ? env_theme.disabled : env_theme.primary
-                }}
+                button={{onClick: hook_popup.Enable, disabled: props.autocomplete.disabled}}
+                sx={{color: my_value === null ? env_theme.disabled : env_theme.primary}}
             >
                 {my_label}
             </UiButton>
             <Popup
-                dialog={{
-                    open: hook_popup.status
-                }}
+                dialog={{open: hook_popup.status}}
                 icon_button={{
                     onClick: () => {
                         hook_value.setValue('')

@@ -22,10 +22,12 @@ export const Autocomplete = <T extends FieldValues>(props: Props<T>) => {
     const hook_theme = useTheme()
     const status_mobile = useMediaQuery(hook_theme.breakpoints.down('sm'))
 
-    if (status_mobile) {
+    if (status_mobile)
+    {
         return <UiAutocompleteMobile {...props}/>
     }
-    else {
+    else
+    {
         return <UiAutocompleteDesktop {...props}/>
     }
 }

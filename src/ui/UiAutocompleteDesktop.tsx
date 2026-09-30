@@ -1,6 +1,6 @@
+import {type SyntheticEvent} from 'react'
 import {useController, type Control, type FieldValues, type Path} from 'react-hook-form'
 import {Autocomplete, type AutocompleteProps, type AutocompleteRenderInputParams, TextField, type TextFieldProps} from '@mui/material'
-import {type SyntheticEvent} from 'react'
 import {env_theme} from '@/config/env'
 
 type type_autocomplete = Pick<AutocompleteProps<string, false, false, false>, 'slotProps'| 'sx'>
