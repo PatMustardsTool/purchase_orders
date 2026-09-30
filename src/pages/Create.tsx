@@ -7,6 +7,7 @@ import {UiGrid} from '@/ui/UiGrid'
 import {UiGridItem} from '@/ui/UiGridItem'
 import {UiDivider} from '@/ui/UiDivider'
 import {UiTextField} from '@/ui/UiTextField'
+import {Autocomplete} from '@/components/Autocomplete'
 import {useDataCreate} from '@/hooks/useDataCreate'
 import {useAnimation} from '@/hooks/useAnimation'
 import {useBoolean} from '@/hooks/useBoolean'
@@ -42,9 +43,37 @@ export const Create = () => {
                         <UiDivider/>
                    </UiGridItem>
                     <UiGridItem size={{xs: 12, sm: 4}}>
+                        <Autocomplete
+                            controller={{control, name: 'OrderedBy'}}
+                            autocomplete={{options: hook_data.options.ordered_by, disabled: formState.isSubmitting}}
+                            text_field={{label: 'Ordered By'}}
+                        />
+                    </UiGridItem>
+                    <UiGridItem size={{xs: 12, sm: 4}}>
+                        <Autocomplete
+                            controller={{control, name: 'Contract'}}
+                            autocomplete={{options: hook_data.options.contract, disabled: formState.isSubmitting}}
+                            text_field={{label: 'Contract'}}
+                        />
+                    </UiGridItem>
+                    <UiGridItem size={{xs: 12, sm: 4}}>
+                        <Autocomplete
+                            controller={{control, name: 'JobType'}}
+                            autocomplete={{options: hook_data.options.job_type, disabled: formState.isSubmitting}}
+                            text_field={{label: 'Job Type'}}
+                        />
+                    </UiGridItem>
+                    <UiGridItem size={{xs: 12, sm: 4}}>
                         <UiTextField
                             controller={{control, name: 'JobReference'}}
                             text_field={{label: 'Job Reference', disabled: formState.isSubmitting}}
+                        />
+                    </UiGridItem>
+                    <UiGridItem size={{xs: 12, sm: 4}}>
+                        <Autocomplete
+                            controller={{control, name: 'Supplier'}}
+                            autocomplete={{options: hook_data.options.supplier, disabled: formState.isSubmitting}}
+                            text_field={{label: 'Supplier'}}
                         />
                     </UiGridItem>
                 </UiGrid>

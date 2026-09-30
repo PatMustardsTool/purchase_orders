@@ -1,11 +1,18 @@
-query ($var_item_id: ID!, $var_column_ids: [String!]!)
+query ($var_board_ids: [ID!]!, $var_column_ids: [String!], $var_limit: Int!, $var_cursor: String)
 {
-    items(ids: [$var_item_id]) {
-        id
-        name
-        column_values(ids: $var_column_ids) {
-            id
-            text
+    boards(ids: $var_board_ids) {
+        items_page(limit: $var_limit, cursor: $var_cursor)
+        {
+            items
+            {
+                name
+                column_values(ids: $var_column_ids)
+                {
+                    id
+                    text
+                }
+            }
+            cursor
         }
     }
 }

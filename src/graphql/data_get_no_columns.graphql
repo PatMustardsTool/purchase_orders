@@ -1,0 +1,14 @@
+query ($var_board_ids: [ID!]!, $var_limit: Int!, $var_cursor: String)
+{
+    boards(ids: $var_board_ids)
+    {
+        items_page(limit: $var_limit, cursor: $var_cursor)
+        {
+            items
+            {
+                name
+            }
+            cursor
+        }
+    }
+}

@@ -5,7 +5,7 @@ import {env_theme} from '@/config/env'
 type Props = {
     options: string[]
     value?: string | null
-    onSelect: (option: string) => void
+    onSelect: (my_option: string) => void
 }
 
 export const ListSearch = (props: Props) => (
