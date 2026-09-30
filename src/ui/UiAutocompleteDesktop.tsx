@@ -115,24 +115,10 @@ export const UiAutocompleteDesktop = <T extends FieldValues>(props: Props<T>) =>
 
     const {field} = useController(props.controller)
 
-    // const props_controller = {
-    //     autocomplete: {
-    //         onChange: (_: SyntheticEvent, value: string | null) => {
-    //             field.onChange(value === '' || value === null ? undefined : value)
-    //         },
-    //         value: field.value === '' || field.value === undefined ? null : field.value
-    //     },
-    //     render_input: {
-    //         inputRef: field.ref
-    //     }
-    // }
-
     const props_controller = {
         autocomplete: {
-            onChange: (_: SyntheticEvent, value: string | null) => {
-                field.onChange(value || undefined)
-            },
-            value: field.value || null
+            onChange: (_: SyntheticEvent, value: string | null) => field.onChange(value),
+            value: field.value ?? null
         },
         render_input: {
             inputRef: field.ref

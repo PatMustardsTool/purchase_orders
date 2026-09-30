@@ -7,11 +7,12 @@ import {UiGrid} from '@/ui/UiGrid'
 import {UiGridItem} from '@/ui/UiGridItem'
 import {UiDivider} from '@/ui/UiDivider'
 import {UiTextField} from '@/ui/UiTextField'
+import {UiButtonSubmit} from '@/ui/UiButtonSubmit'
 import {Autocomplete} from '@/components/Autocomplete'
 import {useDataCreate} from '@/hooks/useDataCreate'
+import {usePageForm} from '@/components/ProviderPageForm'
 import {useAnimation} from '@/hooks/useAnimation'
 import {useBoolean} from '@/hooks/useBoolean'
-import {usePageForm} from '@/components/ProviderPageForm'
 import {schema_create, schema_default, type SchemaCreate} from '@/schema/SchemaCreate'
 
 // import {user_email} from '@/api/fn_user_get'
@@ -34,6 +35,10 @@ export const Create = () => {
     })
 
     useEffect(() => {hook_page_form.setReset(reset)}, [reset])
+
+    const onSubmit = async (data: SchemaCreate) => {
+        console.log(data)
+    }
 
     return (
         <>
@@ -74,6 +79,21 @@ export const Create = () => {
                             controller={{control, name: 'Supplier'}}
                             autocomplete={{options: hook_data.options.supplier, disabled: formState.isSubmitting}}
                             text_field={{label: 'Supplier'}}
+                        />
+                    </UiGridItem>
+                </UiGrid>
+                <UiGrid flex={'none'}>
+                    <UiGridItem size={12}>
+                        <UiButtonSubmit
+                            button={{
+                                disabled: !formState.isValid || formState.isSubmitting,
+                                onClick: () => {
+                                    hook_button_submit.Animate()
+                                    handleSubmit(onSubmit)()
+                                }
+                            }}
+                            icon={{onAnimationEnd: hook_button_submit.onAnimationEnd, status_animated: hook_button_submit.status_animated}}
+                            submitting={formState.isSubmitting}
                         />
                     </UiGridItem>
                 </UiGrid>

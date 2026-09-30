@@ -14,7 +14,11 @@ type Props = {
 
 const base_list_item_button: ListItemButtonProps = {
     sx: {
-        borderRadius: env_theme.border_radius
+        borderRadius: env_theme.border_radius,
+        textAlign: 'center',
+        '& .MuiListItemText-primary': {
+            color: 'inherit'
+        }
     }
 }
 
@@ -25,7 +29,8 @@ export const UiListItemButtonSearch = (props: Props) => {
         autoFocus: props.list_item_button.status_selected,
         sx: {
             ...base_list_item_button.sx,
-            border: props.list_item_button.status_selected ? `0.1rem solid ${env_theme.primary}` : 'none'
+            border: props.list_item_button.status_selected ? `0.1rem solid ${env_theme.primary}` : 'none',
+            color: props.list_item_button.status_selected ? env_theme.primary : env_theme.secondary
         }
     }
 

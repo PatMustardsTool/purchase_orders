@@ -29,11 +29,11 @@ export const UiAutocompleteMobile = <T extends FieldValues>(props: Props<T>) => 
     const hook_popup = useBoolean()
     const hook_value = useValue()
 
-    const my_value = field.value === '' || field.value === undefined ? null : field.value
+    const my_value = field.value ?? null
 
-    const my_filtered_options = props.autocomplete.options.filter((my_option) =>
-        my_option.toLowerCase().includes(hook_value.value.toLowerCase())
-    )
+    const my_filtered_options = props.autocomplete.options.filter((my_option) => {
+        return my_option.toLowerCase().includes(hook_value.value.toLowerCase())
+    })
 
     const my_label = my_value ?? props.text_field.label
 
@@ -59,7 +59,8 @@ export const UiAutocompleteMobile = <T extends FieldValues>(props: Props<T>) => 
                         hook_value.setValue('')
                         hook_popup.Disable()
                     }
-                }}>
+                }}
+            >
                 <UiGrid flex={'none'}>
                     <UiTextFieldSearch
                         value={hook_value.value}
@@ -70,8 +71,8 @@ export const UiAutocompleteMobile = <T extends FieldValues>(props: Props<T>) => 
                     <ListSearch
                         options={my_filtered_options}
                         value={my_value}
-                        onSelect={(option) => {
-                            field.onChange(option)
+                        onSelect={(my_option) => {
+                            field.onChange(my_option)
                             hook_value.setValue('')
                             hook_popup.Disable()
                         }}

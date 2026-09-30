@@ -1,6 +1,5 @@
-import {List, ListItem, ListItemText} from '@mui/material'
+import {List, ListItem, ListItemText, type ListProps} from '@mui/material'
 import {UiListItemButtonSearch} from '@/ui/UiListItemButtonSearch'
-import {env_theme} from '@/config/env'
 
 type Props = {
     options: string[]
@@ -8,8 +7,14 @@ type Props = {
     onSelect: (my_option: string) => void
 }
 
+const base_list: ListProps = {
+    sx: {
+        width: '100%'
+    }
+}
+
 export const ListSearch = (props: Props) => (
-    <List sx={{width: '100%'}}>
+    <List {...base_list}>
         {props.options.map((my_option) => {
 
             const status_selected = my_option === props.value
@@ -22,15 +27,7 @@ export const ListSearch = (props: Props) => (
             }
 
             const props_list_item_text = {
-                primary: my_option,
-                slotProps: {
-                    primary: {
-                        sx: {
-                            color: status_selected ? env_theme.primary : env_theme.secondary,
-                            textAlign: 'center'
-                        }
-                    }
-                }
+                primary: my_option
             }
 
             return (
