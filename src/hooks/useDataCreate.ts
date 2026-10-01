@@ -49,7 +49,7 @@ export const useDataCreate = () => {
     })
 
     return {
-        my_tables: my_tanstack_query.data?.tables ?? my_empty_data.tables,
+        tables: my_tanstack_query.data?.tables ?? my_empty_data.tables,
         options: my_tanstack_query.data?.options ?? my_empty_data.options,
         loading: my_tanstack_query.isPending,
         error: my_tanstack_query.error

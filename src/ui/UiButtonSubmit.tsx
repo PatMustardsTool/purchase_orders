@@ -33,24 +33,19 @@ const my_animation = `${keyframes`
 const base_button: ButtonProps = {
     disableRipple: true,
     sx: {
-        margin: {
-            sm: '0 auto'
-        },
-        width: {
-            xs: '100%',
-            sm: '33%'
-        },
+        margin: {xs: '0 auto', sm: '0 auto'},
+        width: {xs: '100%', sm: '33%'},
         '&:hover': {
-            boxShadow: '0 4px 12px rgba(0,0,0,0.12)'
+            boxShadow: env_theme.button_box_shadow
         }
     }
 }
 
 const base_loading: CircularProgressProps = {
+    size: env_theme.icon_button_size,
     sx: {
-        color: env_theme.primary,
-    },
-    size: env_theme.icon_button_size
+        color: env_theme.primary
+    }
 }
 
 const base_icon: SvgIconProps = {

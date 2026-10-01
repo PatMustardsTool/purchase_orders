@@ -21,6 +21,7 @@ export const env_theme = {
     border_width: '.25rem',
     scrollbar_width: 6,
     button_height: 56,
+    button_box_shadow: '0 0.25rem 0.75rem #0000001F',
     icon_button_size: 80
 }
 

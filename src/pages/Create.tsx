@@ -10,10 +10,12 @@ import {UiTextField} from '@/ui/UiTextField'
 import {UiDatePicker} from '@/ui/UiDatePicker'
 import {UiButtonSubmit} from '@/ui/UiButtonSubmit'
 import {Autocomplete} from '@/components/Autocomplete'
+import {Popup} from '@/components/Popup'
 import {useDataCreate} from '@/hooks/useDataCreate'
 import {usePageForm} from '@/components/ProviderPageForm'
 import {useAnimation} from '@/hooks/useAnimation'
 import {useBoolean} from '@/hooks/useBoolean'
+import {fn_create} from '@/form/fn_create'
 import {schema_create, schema_default, type SchemaCreate} from '@/schema/SchemaCreate'
 
 // import {user_email} from '@/api/fn_user_get'
@@ -38,7 +40,22 @@ export const Create = () => {
     useEffect(() => {hook_page_form.setReset(reset)}, [reset])
 
     const onSubmit = async (data: SchemaCreate) => {
-        console.log(data)
+
+        // await new Promise(resolve => setTimeout(resolve, 2000))
+
+        const params = {
+            data,
+            job_type_table: hook_data.tables.job_type,
+            ordered_by_table: hook_data.tables.ordered_by
+        }
+
+        await fn_create(params)
+
+        hook_popup.Enable()
+
+        // const output = await fn_create(params)
+
+        // use output here
     }
 
     return (
@@ -99,12 +116,24 @@ export const Create = () => {
                                     handleSubmit(onSubmit)()
                                 }
                             }}
-                            icon={{onAnimationEnd: hook_button_submit.onAnimationEnd, status_animated: hook_button_submit.status_animated}}
+                            icon={{
+                                onAnimationEnd: hook_button_submit.onAnimationEnd,
+                                status_animated: hook_button_submit.status_animated
+                            }}
                             submitting={formState.isSubmitting}
                         />
                     </UiGridItem>
                 </UiGrid>
             </UiBoxForm>
+            <Popup
+                dialog={{
+                    open: hook_popup.status,
+                }}
+                icon_button={{
+                    // onClick: fn_on_close
+                }}
+            >
+            </Popup>
         </>
     )
 }
