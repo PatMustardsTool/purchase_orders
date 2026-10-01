@@ -14,22 +14,19 @@ type Props<T extends FieldValues> = {
     }
 }
 
-const fn_get_picker = (my_event: MouseEvent | KeyboardEvent) =>
-    my_event.currentTarget.closest('.MuiPickersTextField-root')
-
 const fn_handle_click = (my_event: MouseEvent) => {
-    fn_get_picker(my_event)?.querySelector<HTMLButtonElement>('[data-mui-picker-open-button]')?.click()
+    my_event.currentTarget.querySelector<HTMLButtonElement>('[data-mui-picker-open-button]')?.click()
 }
 
 const fn_handle_key_down = (my_event: KeyboardEvent) => {
     if (my_event.key === 'Enter') {
-        my_event.preventDefault()
-        fn_get_picker(my_event)?.querySelector('input')?.click()
+        my_event.preventDefault();
+        my_event.currentTarget.closest('.MuiPickersTextField-root')?.querySelector('input')?.click();
     }
 }
 
 const fn_focus_datepicker = (my_event: MouseEvent | KeyboardEvent) => {
-    fn_get_picker(my_event)?.querySelector('input')?.focus()
+    my_event.currentTarget.closest('.MuiPickersTextField-root')?.querySelector('input')?.focus()
 }
 
 const base_clear_icon = {
